@@ -21,22 +21,28 @@ class TaskForm extends Component{
     render(){
         return (
             <form onSubmit={this.onSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Write a Task" 
-                    name="title" 
-                    className="form-control" 
-                    onChange={this.onChange}
-                    value={this.state.title}
-                />
-                <textarea 
-                    placeholder="Write a description" 
-                    name="description" 
-                    className="form-control"
-                    onChange={this.onChange}
-                    value={this.state.description}
-                ></textarea>
-                <button type="submit" className="btn btn-primary">Save Task</button>
+                <div className="form-group">
+                    <input 
+                        type="text" 
+                        placeholder="Write a Task" 
+                        name="title" 
+                        className="form-control" 
+                        onChange={this.onChange}
+                        value={this.state.title}
+                    />
+                </div>
+                <div className="form-group">
+                    <textarea 
+                        placeholder="Write a description" 
+                        name="description" 
+                        className="form-control"
+                        onChange={this.onChange}
+                        value={this.state.description}
+                    ></textarea>
+                </div>
+                <div className="form-group">
+                    <button type="submit" className="btn btn-primary">Save Task</button>
+                </div>
             </form>
         );
     }
