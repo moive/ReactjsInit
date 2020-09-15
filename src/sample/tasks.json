@@ -21,6 +21,6 @@
         "id":3,
         "title":"task four",
         "description": "Lorem ipsum dldo arec",
-        "done": false
+        "done": true
     }
 ]
