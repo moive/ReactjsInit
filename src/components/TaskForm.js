@@ -4,12 +4,17 @@ class TaskForm extends Component{
 
     state = {
         title:'',
-        description:''
+        description:'',
+        valid:true
     }
 
     onSubmit = e =>{
         e.preventDefault();
         this.props.addTask(this.state.title, this.state.description);
+        this.setState({
+            title:'',
+            description:''
+        });
     }
     
     onChange = e => {
@@ -20,7 +25,7 @@ class TaskForm extends Component{
     }
     render(){
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} className="mt-5">
                 <div className="form-group">
                     <input 
                         type="text" 

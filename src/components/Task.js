@@ -7,11 +7,11 @@ class Task extends Component {
     }
     render() {
         const { task } = this.props;
-        return <div style={this.styleCompleted()}>
-            {task.title} - {task.description} - {task.done} - {task.id}
+        return <li className="list-group-item d-flex justify-content-between2 align-items-center" style={this.styleCompleted()}>
             <input type="checkbox" disabled={this.isDone()} onChange={this.props.checkDone.bind(this, task.id)} />
-            <button style={btnDelete} className="btn btn-danger" onClick={this.props.deleteTask.bind(this, task.id)}>x</button>
-        </div>
+            <span className="ml-4">{task.title} - {task.description} - {task.done} - {task.id}</span>
+            <span style={btnDelete} className="badge badge-primary badge-pill ml-auto" onClick={this.props.deleteTask.bind(this, task.id)}>x</span>
+        </li>
     };
 
     styleCompleted(){
@@ -27,8 +27,9 @@ Task.propTypes = {
 };
 
 const btnDelete = {
-    fontSize: '25px',
-    fontWeight: 'bold'
+    fontSize: '15px',
+    fontWeight: 'bold',
+    cursor:'pointer'
 }
 
 export default Task;
