@@ -8,7 +8,7 @@ export default class Posts extends Component {
     async componentDidMount(){
         const res = await fetch('http://jsonplaceholder.typicode.com/posts')
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
         this.setState({
             posts: data
         });
@@ -20,7 +20,7 @@ export default class Posts extends Component {
                 {
                     this.state.posts.map(post => {
                         return <div key={post.id}>
-                            <h3 className={post.id%2==0 ? 'text-success': 'text-primary'}>{post.title}</h3>
+                            <h3 className={post.id%2 === 0 ? 'text-success': 'text-primary'}>{post.title}</h3>
                             <p>{post.body}</p>
                         </div>
                     })
