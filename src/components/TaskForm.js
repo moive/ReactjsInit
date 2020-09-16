@@ -9,7 +9,7 @@ class TaskForm extends Component{
 
     onSubmit = e =>{
         e.preventDefault();
-        console.log(this.state)
+        this.props.addTask(this.state.title, this.state.description);
     }
     
     onChange = e => {
